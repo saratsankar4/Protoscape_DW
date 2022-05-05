@@ -180,7 +180,7 @@ def insert_past_12_shipment(files):
 
     # file_name = table_details['past_12_months_shipment_data'] + ".csv"
     # df_3.to_csv(file_name, index=False)
-    # save_to_db(table_details['past_12_months_shipment_data'], "append", cfg('db'), df_3)
+    save_to_db(table_details['past_12_months_shipment_data'], "append", cfg('db'), df_3)
 
 
 def insert_blanket_po(files):
@@ -606,7 +606,7 @@ def insert_consumption_query(files):
 
     df['file_row_no'] = np.arange(df.shape[0])
 
-    file_name = table_details['consumption_query_data'] + ".csv"
+#     file_name = table_details['consumption_query_data'] + ".csv"
     # df.to_csv(file_name, index=False)
     save_to_db(table_details['consumption_query_data'], "append", cfg('db'), df)
 
@@ -1222,36 +1222,36 @@ def job():
                 fil_path = folder_path + "/" + i
                 if check_update(i):
                     insert_item_master(fil_path)
-            #
-            # elif i == files_name['file_3']:
-            #     fil_path = folder_path + "/" + i
-            #     if check_update(i):
-            #         insert_inventory_onhand(fil_path)
-            #
-            # elif i == files_name['file_4']:
-            #     fil_path = folder_path + "/" + i
-            #     if check_update(i):
-            #         insert_past_12_shipment(fil_path)
-            #
-            # elif i == files_name['file_5']:
-            #     fil_path = folder_path + "/" + i
-            #     if check_update(i):
-            #         insert_blanket_po(fil_path)
-            #
-            # elif i == files_name['file_6']:
-            #     fil_path = folder_path + "/" + i
-            #     if check_update(i):
-            #         insert_standard_release_po(fil_path)
-            #
-            # elif i == files_name['file_7']:
-            #     fil_path = folder_path + "/" + i
-            #     if check_update(i):
-            #         insert_pending_iqa(fil_path)
-            #
-            # elif i == files_name['file_8']:
-            #     fil_path = folder_path + "/" + i
-            #     if check_update(i):
-            #         insert_pending_sc(fil_path)
+            
+            elif i == files_name['file_3']:
+                fil_path = folder_path + "/" + i
+                if check_update(i):
+                    insert_inventory_onhand(fil_path)
+            
+            elif i == files_name['file_4']:
+                fil_path = folder_path + "/" + i
+                if check_update(i):
+                    insert_past_12_shipment(fil_path)
+            
+            elif i == files_name['file_5']:
+                fil_path = folder_path + "/" + i
+                if check_update(i):
+                    insert_blanket_po(fil_path)
+            
+            elif i == files_name['file_6']:
+                fil_path = folder_path + "/" + i
+                if check_update(i):
+                    insert_standard_release_po(fil_path)
+            
+            elif i == files_name['file_7']:
+                fil_path = folder_path + "/" + i
+                if check_update(i):
+                    insert_pending_iqa(fil_path)
+            
+            elif i == files_name['file_8']:
+                fil_path = folder_path + "/" + i
+                if check_update(i):
+                    insert_pending_sc(fil_path)
 
             elif i == files_name['file_9']:
                 fil_path = folder_path + "/" + i
@@ -1274,80 +1274,80 @@ def job():
             #     if check_update(i):
             #         insert_pso_stepper(fil_path)
 
-            # elif i == files_name['file_13']:
-            #     fil_path = folder_path + "/" + i
-            #     if check_update(i):
-            #         insert_oracle_price_master(fil_path)
-            #
-            # elif i == files_name['file_14']:
-            #     fil_path = folder_path + "/" + i
-            #     if check_update(i):
-            #         insert_consumption_query(fil_path)
-            #
-            # elif i == files_name['file_15']:
-            #     fil_path = folder_path + "/" + i
-            #     if check_update(i):
-            #         insert_mrp_receipts(fil_path)
-            #
-            # elif i == files_name['file_16']:
-            #     fil_path = folder_path + "/" + i
-            #     if check_update(i):
-            #         insert_open_close_indent(fil_path)
-            #
-            # elif i == files_name['file_17']:
-            #     fil_path = folder_path + "/" + i
-            #     if check_update(i):
-            #         insert_pending_gir(fil_path)
-            #
-            # elif i == files_name['file_18']:
-            #     fil_path = folder_path + "/" + i
-            #     if check_update(i):
-            #         insert_picklist_details(fil_path)
-            #
-            # elif i == files_name['file_19']:
-            #     fil_path = folder_path + "/" + i
-            #     if check_update(i):
-            #         insert_supplier_master(fil_path)
-            #
-            # elif i == files_name['file_20']:
-            #     fil_path = folder_path + "/" + i
-            #     if check_update(i):
-            #         insert_kanban_replenishment(fil_path)
-            #
-            # elif i == files_name['file_21']:
-            #     fil_path = folder_path + "/" + i
-            #     if check_update(i):
-            #         insert_usage_since_fc(fil_path)
-            #
-            # elif i == files_name['file_22']:
-            #     fil_path = folder_path + "/" + i
-            #     if check_update(i):
-            #         insert_kb_card_summary(fil_path)
-            #
-            # elif i == files_name['file_23']:
-            #     fil_path = folder_path + "/" + i
-            #     if check_update(i):
-            #         insert_pou_oh(fil_path)
-            #
-            # elif i == files_name['file_24']:
-            #     fil_path = folder_path + "/" + i
-            #     if check_update(i):
-            #         insert_kb_card_status(fil_path)
-            #
-            # elif i == files_name['file_25']:
-            #     fil_path = folder_path + "/" + i
-            #     if check_update(i):
-            #         insert_kb_status_refreshable(fil_path)
-            #
-            # elif i == files_name['file_26']:
-            #     fil_path = folder_path + "/" + i
-            #     if check_update(i):
-            #         insert_non_kb_po_refreshable(fil_path)
-            #
-            # elif i == files_name['file_27']:
-            #     fil_path = folder_path + "/" + i
-            #     if check_update(i):
-            #         insert_open_sales_order(fil_path)
+            elif i == files_name['file_13']:
+                fil_path = folder_path + "/" + i
+                if check_update(i):
+                    insert_oracle_price_master(fil_path)
+            
+            elif i == files_name['file_14']:
+                fil_path = folder_path + "/" + i
+                if check_update(i):
+                    insert_consumption_query(fil_path)
+            
+            elif i == files_name['file_15']:
+                fil_path = folder_path + "/" + i
+                if check_update(i):
+                    insert_mrp_receipts(fil_path)
+            
+            elif i == files_name['file_16']:
+                fil_path = folder_path + "/" + i
+                if check_update(i):
+                    insert_open_close_indent(fil_path)
+            
+            elif i == files_name['file_17']:
+                fil_path = folder_path + "/" + i
+                if check_update(i):
+                    insert_pending_gir(fil_path)
+            
+            elif i == files_name['file_18']:
+                fil_path = folder_path + "/" + i
+                if check_update(i):
+                    insert_picklist_details(fil_path)
+            
+            elif i == files_name['file_19']:
+                fil_path = folder_path + "/" + i
+                if check_update(i):
+                    insert_supplier_master(fil_path)
+            
+            elif i == files_name['file_20']:
+                fil_path = folder_path + "/" + i
+                if check_update(i):
+                    insert_kanban_replenishment(fil_path)
+            
+            elif i == files_name['file_21']:
+                fil_path = folder_path + "/" + i
+                if check_update(i):
+                    insert_usage_since_fc(fil_path)
+            
+            elif i == files_name['file_22']:
+                fil_path = folder_path + "/" + i
+                if check_update(i):
+                    insert_kb_card_summary(fil_path)
+            
+            elif i == files_name['file_23']:
+                fil_path = folder_path + "/" + i
+                if check_update(i):
+                    insert_pou_oh(fil_path)
+            
+            elif i == files_name['file_24']:
+                fil_path = folder_path + "/" + i
+                if check_update(i):
+                    insert_kb_card_status(fil_path)
+            
+            elif i == files_name['file_25']:
+                fil_path = folder_path + "/" + i
+                if check_update(i):
+                    insert_kb_status_refreshable(fil_path)
+            
+            elif i == files_name['file_26']:
+                fil_path = folder_path + "/" + i
+                if check_update(i):
+                    insert_non_kb_po_refreshable(fil_path)
+            
+            elif i == files_name['file_27']:
+                fil_path = folder_path + "/" + i
+                if check_update(i):
+                    insert_open_sales_order(fil_path)
 
             else:
                 print(i, ' File processed')
