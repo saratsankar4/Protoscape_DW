@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build Image') {
       steps {
-        sh 'docker build -t neewee/bodhee:Datawarehouse_Portescap${APP_VERSION} Datawarehouse_Portescap/'
+        sh 'docker build -t neewee/bodhee:Datawarehouse_Portescap${APP_VERSION}'
       }
     }
 
